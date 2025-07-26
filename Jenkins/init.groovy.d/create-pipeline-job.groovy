@@ -10,11 +10,13 @@ import com.cloudbees.plugins.credentials.domains.*
 def jenkins = Jenkins.instance
 def jobName = "nest-server"
 
+def repoUrl = System.getenv("REPO_URL") ?: "https://github.com/Eunryong/invest_friends.git"
+
 if (jenkins.getItem(jobName) == null) {
     def job = new WorkflowJob(jenkins, jobName)
 
     def userRemoteConfig = new UserRemoteConfig(
-        "https://github.com/gap-year/Server.git",
+        repoUrl,
         null,
         null,
         "github-token"  // ✅ credentials ID

@@ -2,8 +2,8 @@ import jenkins.model.*
 import hudson.tools.*
 import jenkins.plugins.nodejs.tools.*
 
-def nodejsName = 'nodejs-20'
-def nodeVersion = '20.11.1'
+def nodejsName = 'nodejs-24'
+def nodeVersion = '24.4.1'
 
 def installers = [ new NodeJSInstaller(nodeVersion, "", 72) ]
 def props = [ new InstallSourceProperty(installers) ]
