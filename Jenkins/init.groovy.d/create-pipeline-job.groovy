@@ -19,7 +19,7 @@ if (jenkins.getItem(jobName) == null) {
         repoUrl,
         null,
         null,
-        "github-token"  // ✅ credentials ID
+        "github-token"
     )
 
     def scm = new GitSCM(
