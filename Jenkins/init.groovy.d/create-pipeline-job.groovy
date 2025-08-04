@@ -10,6 +10,8 @@ import com.cloudbees.plugins.credentials.domains.*
 def jenkins = Jenkins.instance
 def jobName = "nest-server"
 
+def repoUrl = System.getenv("REPO_URL") ?: "https://github.com/Eunryong/invest_friends.git"
+
 if (jenkins.getItem(jobName) == null) {
     def job = new WorkflowJob(jenkins, jobName)
 
@@ -17,7 +19,7 @@ if (jenkins.getItem(jobName) == null) {
         "https://github.com/Eunryong/invest_friends.git",
         null,
         null,
-        "github-token"  // ✅ credentials ID
+        "github-token"
     )
 
     def scm = new GitSCM(
