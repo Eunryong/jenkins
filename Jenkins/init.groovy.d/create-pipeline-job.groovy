@@ -14,7 +14,7 @@ if (jenkins.getItem(jobName) == null) {
     def job = new WorkflowJob(jenkins, jobName)
 
     def userRemoteConfig = new UserRemoteConfig(
-        "https://github.com/gap-year/Server.git",
+        "https://github.com/Eunryong/invest_friends.git",
         null,
         null,
         "github-token"  // ✅ credentials ID
@@ -27,7 +27,7 @@ if (jenkins.getItem(jobName) == null) {
         Collections.<SubmoduleConfig>emptyList(),
         null,
         null,
-        Collections.<GitSCMExtension>emptyList() // ✅ 이 타입을 쓰려면 import 필요
+        Collections.<GitSCMExtension>emptyList()
     )
 
     def definition = new CpsScmFlowDefinition(scm, "Jenkinsfile")
